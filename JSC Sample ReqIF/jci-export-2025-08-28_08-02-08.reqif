@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<REQ-IF xmlns="http://www.omg.org/spec/ReqIF/20110401/reqif.xsd" xmlns:doors="http://www.ibm.com/rdm/doors/REQIF/xmlns/1.0" xmlns:reqif="http://www.omg.org/spec/ReqIF/20110401/reqif.xsd" xmlns:reqif-common="http://www.prostep.org/reqif" xmlns:reqif-xhtml="http://www.w3.org/1999/xhtml" xmlns:rm="http://www.ibm.com/rm" xmlns:rm-jama="http://www.jamasoftware.com/rm" xmlns:rm-reqif="http://www.ibm.com/rm/reqif" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <THE-HEADER>
+        <REQ-IF-HEADER IDENTIFIER="_d90bae77-638e-4e2b-a61d-393eb0d528f7">
+            <CREATION-TIME>2025-08-28T20:01:55.449776489Z</CREATION-TIME>
+            <REQ-IF-TOOL-ID>Jama Connect Interchange</REQ-IF-TOOL-ID>
+            <REQ-IF-VERSION>1.0</REQ-IF-VERSION>
+            <SOURCE-TOOL-ID>Jama Connect</SOURCE-TOOL-ID>
+            <TITLE>Jama Connect by Jama Software</TITLE>
+        </REQ-IF-HEADER>
+    </THE-HEADER>
+    <CORE-CONTENT>
+        <REQ-IF-CONTENT>
+            <DATATYPES>
+                <DATATYPE-DEFINITION-REAL ACCURACY="16" IDENTIFIER="_8f2be301-50bd-4339-8846-0c0d1048d8ab" LAST-CHANGE="2025-08-28T20:02:09.01076121Z" LONG-NAME="Float" MAX="1.7976931348623157E308" MIN="4.9E-324"/>
+                <DATATYPE-DEFINITION-ENUMERATION DESC="document_status$31" IDENTIFIER="_ff1fb225-2dfc-364d-b7a4-e1b429d87f8d" LAST-CHANGE="2025-08-28T20:02:09.01434097Z" LONG-NAME="Document Status">
+                    <SPECIFIED-VALUES>
+                        <ENUM-VALUE IDENTIFIER="_8571043e-7892-3741-9bc5-ace9f35701a0" LAST-CHANGE="2025-08-28T20:02:09.013979901Z" LONG-NAME="Draft">
+                            <PROPERTIES>
+                                <EMBEDDED-VALUE KEY="652" OTHER-CONTENT=""/>
+                            </PROPERTIES>
+                        </ENUM-VALUE>
+                        <ENUM-VALUE IDENTIFIER="_a76e0327-511f-3a18-998d-79500b93556b" LAST-CHANGE="2025-08-28T20:02:09.01420398Z" LONG-NAME="Review">
+                            <PROPERTIES>
+                                <EMBEDDED-VALUE KEY="653" OTHER-CONTENT=""/>
+                            </PROPERTIES>
+                        </ENUM-VALUE>
+                        <ENUM-VALUE IDENTIFIER="_0729fe5f-5370-3a2d-8746-691a11f25a65" LAST-CHANGE="2025-08-28T20:02:09.014280284Z" LONG-NAME="Approved">
+                            <PROPERTIES>
+                                <EMBEDDED-VALUE KEY="654" OTHER-CONTENT=""/>
+                            </PROPERTIES>
+                        </ENUM-VALUE>
+                    </SPECIFIED-VALUES>
+                </DATATYPE-DEFINITION-ENUMERATION>
+                <DATATYPE-DEFINITION-DATE IDENTIFIER="_7e20f78d-7b62-435d-98c3-055dbcc2bed2" LAST-CHANGE="2025-08-28T20:02:09.01700892Z" LONG-NAME="Date"/>
+                <DATATYPE-DEFINITION-BOOLEAN IDENTIFIER="_fa68b3dd-becf-4001-b0fd-bc344eda9de6" LAST-CHANGE="2025-08-28T20:02:09.017086069Z" LONG-NAME="Flag"/>
+                <DATATYPE-DEFINITION-XHTML IDENTIFIER="_814b5b30-026a-44d7-8127-a3d1e4bd82d8" LAST-CHANGE="2025-08-28T20:02:09.017127385Z" LONG-NAME="HTML"/>
+                <DATATYPE-DEFINITION-STRING IDENTIFIER="_692a3ca5-e8fb-450f-a753-0a6fc34f1465" LAST-CHANGE="2025-08-28T20:02:09.017175642Z" LONG-NAME="Text" MAX-LENGTH="255"/>
+                <DATATYPE-DEFINITION-INTEGER IDENTIFIER="_34f43584-e4c6-493f-bc13-409ef3641486" LAST-CHANGE="2025-08-28T20:02:09.017253805Z" LONG-NAME="Integer" MAX="2147483647" MIN="-2147483648"/>
+            </DATATYPES>
+            <SPEC-TYPES>
+                <SPEC-OBJECT-TYPE DESC="Component type" IDENTIFIER="_70b41886-afb0-32d9-868e-2ea53fa95fb0" LAST-CHANGE="2025-08-28T20:02:09.021157909Z" LONG-NAME="Component">
+                    <SPEC-ATTRIBUTES>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="documentKey" IDENTIFIER="_7e488965-3af5-39d7-a9d0-456eb2f2bc23" IS-EDITABLE="false" LAST-CHANGE="2025-08-28T20:02:09.020783165Z" LONG-NAME="ID">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="globalId" IDENTIFIER="_84853544-3502-3b58-a8f4-a453a5253b78" IS-EDITABLE="false" LAST-CHANGE="2025-08-28T20:02:09.020898128Z" LONG-NAME="Global ID">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="name" IDENTIFIER="_a7859f37-f75a-3bc3-a83c-15a9fba6f4c0" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.021003418Z" LONG-NAME="Name">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-XHTML DESC="description" IDENTIFIER="_e0d13fa2-7438-322d-839b-c85cdf6a4661" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.021116658Z" LONG-NAME="Description">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-XHTML-REF>_814b5b30-026a-44d7-8127-a3d1e4bd82d8</DATATYPE-DEFINITION-XHTML-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-XHTML>
+                    </SPEC-ATTRIBUTES>
+                </SPEC-OBJECT-TYPE>
+                <SPECIFICATION-TYPE DESC="Component type" IDENTIFIER="_eae0be0b-a5c7-36e7-856e-97bc95ce62c9" LAST-CHANGE="2025-08-28T20:02:09.021461611Z" LONG-NAME="Component">
+                    <SPEC-ATTRIBUTES>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="documentKey" IDENTIFIER="_d14297ee-10d2-351e-a653-3c39dbad2be4" IS-EDITABLE="false" LAST-CHANGE="2025-08-28T20:02:09.021235495Z" LONG-NAME="ID">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="globalId" IDENTIFIER="_31f22f1a-aa89-39b2-bfeb-8e6a230afd5c" IS-EDITABLE="false" LAST-CHANGE="2025-08-28T20:02:09.021315666Z" LONG-NAME="Global ID">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="name" IDENTIFIER="_6f6655b0-deab-3581-89bb-620812e49216" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.021370547Z" LONG-NAME="Name">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-XHTML DESC="description" IDENTIFIER="_3039bd79-e54e-3c61-97f0-d4f8e244c10f" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.021423629Z" LONG-NAME="Description">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-XHTML-REF>_814b5b30-026a-44d7-8127-a3d1e4bd82d8</DATATYPE-DEFINITION-XHTML-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-XHTML>
+                    </SPEC-ATTRIBUTES>
+                </SPECIFICATION-TYPE>
+                <SPEC-RELATION-TYPE DESC="Describe" IDENTIFIER="_d05f91ab-8bb3-38fe-b581-5b25e024bb75" LAST-CHANGE="2025-08-28T20:02:09.021501693Z" LONG-NAME="Describe"/>
+                <SPEC-RELATION-TYPE DESC="Mitigated By" IDENTIFIER="_5da86789-34a2-3d31-8d7c-73625013635d" LAST-CHANGE="2025-08-28T20:02:09.02153458Z" LONG-NAME="Mitigated By"/>
+                <SPEC-RELATION-TYPE DESC="Verified By" IDENTIFIER="_186e7c99-9d75-3243-a61c-f66034c4e89c" LAST-CHANGE="2025-08-28T20:02:09.021566225Z" LONG-NAME="Verified By"/>
+                <SPECIFICATION-TYPE DESC="Set type" IDENTIFIER="_2df3aee6-b2bf-3ea7-9973-049d157e9ddd" LAST-CHANGE="2025-08-28T20:02:09.025997107Z" LONG-NAME="Set">
+                    <SPEC-ATTRIBUTES>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="setKey" IDENTIFIER="_c0d12baf-9333-31ac-8a93-4f0b6c6029b6" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.021626032Z" LONG-NAME="Set Key">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="globalId" IDENTIFIER="_c02f5f75-eef3-3f3e-9350-c0cc53e18f23" IS-EDITABLE="false" LAST-CHANGE="2025-08-28T20:02:09.021684086Z" LONG-NAME="Global ID">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="documentKey" IDENTIFIER="_707fda62-113c-3d0e-8c0f-b7ff0822d17c" IS-EDITABLE="false" LAST-CHANGE="2025-08-28T20:02:09.021737335Z" LONG-NAME="ID">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="name" IDENTIFIER="_24f748b9-9a09-3efc-9050-3429dc165f24" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.025547131Z" LONG-NAME="Name">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-XHTML DESC="description" IDENTIFIER="_6017c72b-dce8-3d6c-a754-5f72fdcf5fb9" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.025649968Z" LONG-NAME="Description">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-XHTML-REF>_814b5b30-026a-44d7-8127-a3d1e4bd82d8</DATATYPE-DEFINITION-XHTML-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-XHTML>
+                        <ATTRIBUTE-DEFINITION-ENUMERATION DESC="document_status$31" IDENTIFIER="_a171db2e-e030-38d9-a682-c0755c386c86" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.025738296Z" LONG-NAME="Document Status" MULTI-VALUED="false">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-ENUMERATION-REF>_ff1fb225-2dfc-364d-b7a4-e1b429d87f8d</DATATYPE-DEFINITION-ENUMERATION-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-ENUMERATION>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="authors$31" IDENTIFIER="_40c3ce74-6072-3df0-b029-adb21ee6db47" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.025836481Z" LONG-NAME="Author(s)">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-XHTML DESC="approvers$31" IDENTIFIER="_592947f6-9424-3b77-8291-81a6c06b681b" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.02588286Z" LONG-NAME="Approver(s)">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-XHTML-REF>_814b5b30-026a-44d7-8127-a3d1e4bd82d8</DATATYPE-DEFINITION-XHTML-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-XHTML>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="document_id$31" IDENTIFIER="_0cc5f8ed-9bf9-3f31-b0e6-740ce7fbc21b" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.02593316Z" LONG-NAME="Document ID">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-XHTML DESC="change_history$31" IDENTIFIER="_7374cef8-1096-38c8-86e5-a7565fb13720" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.025968787Z" LONG-NAME="Change History">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-XHTML-REF>_814b5b30-026a-44d7-8127-a3d1e4bd82d8</DATATYPE-DEFINITION-XHTML-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-XHTML>
+                    </SPEC-ATTRIBUTES>
+                </SPECIFICATION-TYPE>
+                <SPEC-RELATION-TYPE DESC="Verifies" IDENTIFIER="_67b6ef58-dff7-34fb-aa65-7e1a451f1c46" LAST-CHANGE="2025-08-28T20:02:09.026022845Z" LONG-NAME="Verifies"/>
+                <SPEC-RELATION-TYPE DESC="CR Related" IDENTIFIER="_8ac5eca9-6a98-34d0-a907-9df8095c8c4d" LAST-CHANGE="2025-08-28T20:02:09.026088287Z" LONG-NAME="CR Related"/>
+                <SPEC-RELATION-TYPE DESC="Derived From" IDENTIFIER="_dda8a719-638a-33a8-840c-e1bca867d615" LAST-CHANGE="2025-08-28T20:02:09.026115943Z" LONG-NAME="Derived From"/>
+                <SPEC-RELATION-TYPE DESC="Linked To" IDENTIFIER="_a8d33413-53db-3f2c-8a87-a60a3941b0f9" LAST-CHANGE="2025-08-28T20:02:09.026138873Z" LONG-NAME="Linked To"/>
+                <SPECIFICATION-TYPE DESC="Text type" IDENTIFIER="_a12ce592-a374-36a1-bccf-e86a01e22e1a" LAST-CHANGE="2025-08-28T20:02:09.026323597Z" LONG-NAME="Text">
+                    <SPEC-ATTRIBUTES>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="documentKey" IDENTIFIER="_ea1801da-5d0a-3b9b-94ad-e0a84e7b615d" IS-EDITABLE="false" LAST-CHANGE="2025-08-28T20:02:09.026180892Z" LONG-NAME="ID">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="globalId" IDENTIFIER="_99bbdd76-d9cf-3f2b-b4d5-99298b702a0d" IS-EDITABLE="false" LAST-CHANGE="2025-08-28T20:02:09.026221352Z" LONG-NAME="Global ID">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="name" IDENTIFIER="_8587591b-b749-3e1a-bed5-20b76e9cb56a" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.026257733Z" LONG-NAME="Name">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-XHTML DESC="description" IDENTIFIER="_3aef9164-7bb1-3264-adfe-c19d7991411a" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.02629863Z" LONG-NAME="Description">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-XHTML-REF>_814b5b30-026a-44d7-8127-a3d1e4bd82d8</DATATYPE-DEFINITION-XHTML-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-XHTML>
+                    </SPEC-ATTRIBUTES>
+                </SPECIFICATION-TYPE>
+                <SPEC-RELATION-TYPE DESC="Related to" IDENTIFIER="_e114b52e-9afc-37d6-8b95-9704392370dc" LAST-CHANGE="2025-08-28T20:02:09.026347255Z" LONG-NAME="Related to"/>
+                <SPEC-OBJECT-TYPE DESC="Text type" IDENTIFIER="_96feca6a-421b-326e-89a7-a437cbc9d289" LAST-CHANGE="2025-08-28T20:02:09.026575398Z" LONG-NAME="Text">
+                    <SPEC-ATTRIBUTES>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="documentKey" IDENTIFIER="_f60694cd-469f-3979-827c-2cfccec829c5" IS-EDITABLE="false" LAST-CHANGE="2025-08-28T20:02:09.02638692Z" LONG-NAME="ID">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="globalId" IDENTIFIER="_4dbdb4b4-c4b8-378a-9efe-7b5197ecc2cb" IS-EDITABLE="false" LAST-CHANGE="2025-08-28T20:02:09.026422068Z" LONG-NAME="Global ID">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="name" IDENTIFIER="_88f1e357-ace6-3ffd-b11f-8ad9413b3afc" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.026477572Z" LONG-NAME="Name">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-XHTML DESC="description" IDENTIFIER="_2ed6cda1-02c6-3148-926e-735a700a6708" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.026516282Z" LONG-NAME="Description">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-XHTML-REF>_814b5b30-026a-44d7-8127-a3d1e4bd82d8</DATATYPE-DEFINITION-XHTML-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-XHTML>
+                    </SPEC-ATTRIBUTES>
+                </SPEC-OBJECT-TYPE>
+                <SPEC-RELATION-TYPE DESC="Validated By" IDENTIFIER="_fe6c90f4-b558-363d-9098-5b01ca137167" LAST-CHANGE="2025-08-28T20:02:09.026601274Z" LONG-NAME="Validated By"/>
+                <SPEC-OBJECT-TYPE DESC="Set type" IDENTIFIER="_75040e9f-adb3-3b85-8115-01f85fb10059" LAST-CHANGE="2025-08-28T20:02:09.027030951Z" LONG-NAME="Set">
+                    <SPEC-ATTRIBUTES>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="setKey" IDENTIFIER="_2a921b10-442c-32e2-b676-ff9346926990" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.026653297Z" LONG-NAME="Set Key">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="globalId" IDENTIFIER="_b40b530a-7257-3d38-a366-94d64f563fb3" IS-EDITABLE="false" LAST-CHANGE="2025-08-28T20:02:09.026690267Z" LONG-NAME="Global ID">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="documentKey" IDENTIFIER="_543a30ad-9c06-3aab-a32a-eef19e5448f8" IS-EDITABLE="false" LAST-CHANGE="2025-08-28T20:02:09.026729453Z" LONG-NAME="ID">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="name" IDENTIFIER="_15a63543-0e76-3822-a3e5-294c5b50b9a4" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.026768207Z" LONG-NAME="Name">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-XHTML DESC="description" IDENTIFIER="_554c456e-3d5c-3dc1-b32e-2f660f73a759" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.026804555Z" LONG-NAME="Description">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-XHTML-REF>_814b5b30-026a-44d7-8127-a3d1e4bd82d8</DATATYPE-DEFINITION-XHTML-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-XHTML>
+                        <ATTRIBUTE-DEFINITION-ENUMERATION DESC="document_status$31" IDENTIFIER="_f7cdaf86-bd90-3554-8520-e5773b8d2fc5" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.026845518Z" LONG-NAME="Document Status" MULTI-VALUED="false">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-ENUMERATION-REF>_ff1fb225-2dfc-364d-b7a4-e1b429d87f8d</DATATYPE-DEFINITION-ENUMERATION-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-ENUMERATION>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="authors$31" IDENTIFIER="_a43437eb-7496-3dd1-988b-e707367ceecc" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.026880962Z" LONG-NAME="Author(s)">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-XHTML DESC="approvers$31" IDENTIFIER="_5b7344af-5504-3fc7-9a41-4b577e285188" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.026935695Z" LONG-NAME="Approver(s)">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-XHTML-REF>_814b5b30-026a-44d7-8127-a3d1e4bd82d8</DATATYPE-DEFINITION-XHTML-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-XHTML>
+                        <ATTRIBUTE-DEFINITION-STRING DESC="document_id$31" IDENTIFIER="_e21d648b-5a8a-3e81-bddd-d0ca68358434" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.026970937Z" LONG-NAME="Document ID">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-STRING-REF>_692a3ca5-e8fb-450f-a753-0a6fc34f1465</DATATYPE-DEFINITION-STRING-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-STRING>
+                        <ATTRIBUTE-DEFINITION-XHTML DESC="change_history$31" IDENTIFIER="_af455c40-3cc6-3114-a9b8-b009f64c111a" IS-EDITABLE="true" LAST-CHANGE="2025-08-28T20:02:09.027004332Z" LONG-NAME="Change History">
+                            <TYPE>
+                                <DATATYPE-DEFINITION-XHTML-REF>_814b5b30-026a-44d7-8127-a3d1e4bd82d8</DATATYPE-DEFINITION-XHTML-REF>
+                            </TYPE>
+                        </ATTRIBUTE-DEFINITION-XHTML>
+                    </SPEC-ATTRIBUTES>
+                </SPEC-OBJECT-TYPE>
+                <SPEC-RELATION-TYPE DESC="Resulting In" IDENTIFIER="_ae28daf0-27d8-3b4e-bbcc-54a9183d6bbc" LAST-CHANGE="2025-08-28T20:02:09.027054251Z" LONG-NAME="Resulting In"/>
+                <SPEC-RELATION-TYPE DESC="Parent to Child" IDENTIFIER="_11fbc1bb-140f-3940-bb78-011f4d7f04e4" LAST-CHANGE="2025-08-28T20:02:09.027076454Z" LONG-NAME="Parent to Child"/>
+                <SPEC-RELATION-TYPE DESC="Test" IDENTIFIER="_42683662-2fdc-32e2-8034-723d9b03cd64" LAST-CHANGE="2025-08-28T20:02:09.027097867Z" LONG-NAME="Test"/>
+                <SPEC-RELATION-TYPE DESC="Satisfied By" IDENTIFIER="_a3b3075c-7de4-30be-894b-ad769c768ba1" LAST-CHANGE="2025-08-28T20:02:09.027125093Z" LONG-NAME="Satisfied By"/>
+                <SPEC-RELATION-TYPE DESC="Decompose" IDENTIFIER="_cc72fc4f-db3f-36ab-a8a4-9291f00c57cc" LAST-CHANGE="2025-08-28T20:02:09.027146057Z" LONG-NAME="Decompose"/>
+                <SPEC-RELATION-TYPE DESC="Validate" IDENTIFIER="_194183cf-98de-39ad-afb6-0b12ecb402ff" LAST-CHANGE="2025-08-28T20:02:09.027166475Z" LONG-NAME="Validate"/>
+                <SPEC-RELATION-TYPE DESC="Derived" IDENTIFIER="_84b9f06d-4fa0-3b6b-ace7-4565944db164" LAST-CHANGE="2025-08-28T20:02:09.0271872Z" LONG-NAME="Derived"/>
+            </SPEC-TYPES>
+            <SPEC-OBJECTS>
+                <SPEC-OBJECT IDENTIFIER="_29f61c36-3688-3c8f-af55-f1cff59bedf4" LAST-CHANGE="2025-08-13T22:47:19Z" LONG-NAME="CP2">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_96feca6a-421b-326e-89a7-a437cbc9d289</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-TXT-99005">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_4dbdb4b4-c4b8-378a-9efe-7b5197ecc2cb</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="CP2">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_88f1e357-ace6-3ffd-b11f-8ad9413b3afc</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-XHTML>
+                            <THE-VALUE>
+                                <reqif-xhtml:div>
+                                    <reqif-xhtml:p>
+                                        <reqif-xhtml:object data="image-2H8KOM2xBa.png" type="image/png"/>
+                                    </reqif-xhtml:p>
+                                </reqif-xhtml:div>
+                            </THE-VALUE>
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-XHTML-REF>_2ed6cda1-02c6-3148-926e-735a700a6708</ATTRIBUTE-DEFINITION-XHTML-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-XHTML>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-TXT-22">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_f60694cd-469f-3979-827c-2cfccec829c5</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+                <SPEC-OBJECT IDENTIFIER="_0e39dc53-ce3e-344d-9323-d85b9a419b55" LAST-CHANGE="2025-08-13T23:30:48Z" LONG-NAME="A4">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_96feca6a-421b-326e-89a7-a437cbc9d289</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-TXT-99024">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_4dbdb4b4-c4b8-378a-9efe-7b5197ecc2cb</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="A4">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_88f1e357-ace6-3ffd-b11f-8ad9413b3afc</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-TXT-29">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_f60694cd-469f-3979-827c-2cfccec829c5</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+                <SPEC-OBJECT IDENTIFIER="_f2ba15e0-f416-3333-9413-0b706722fd2c" LAST-CHANGE="2025-08-13T22:54:53Z" LONG-NAME="BT3">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_96feca6a-421b-326e-89a7-a437cbc9d289</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-TXT-99018">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_4dbdb4b4-c4b8-378a-9efe-7b5197ecc2cb</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="BT3">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_88f1e357-ace6-3ffd-b11f-8ad9413b3afc</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-XHTML>
+                            <THE-VALUE>
+                                <reqif-xhtml:div>
+                                    <reqif-xhtml:p>
+                                        <reqif-xhtml:object data="image-2n9N3wD7sH.png" type="image/png"/>
+                                    </reqif-xhtml:p>
+                                </reqif-xhtml:div>
+                            </THE-VALUE>
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-XHTML-REF>_2ed6cda1-02c6-3148-926e-735a700a6708</ATTRIBUTE-DEFINITION-XHTML-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-XHTML>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-TXT-27">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_f60694cd-469f-3979-827c-2cfccec829c5</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+                <SPEC-OBJECT IDENTIFIER="_7bdbd98a-c7b7-3296-9262-fcff77c6b248" LAST-CHANGE="2025-08-13T22:21:05Z" LONG-NAME="Copy Paste Images">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_75040e9f-adb3-3b85-8115-01f85fb10059</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-SET-98876">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_b40b530a-7257-3d38-a366-94d64f563fb3</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="Copy Paste Images">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_15a63543-0e76-3822-a3e5-294c5b50b9a4</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-SET-5">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_543a30ad-9c06-3aab-a32a-eef19e5448f8</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+                <SPEC-OBJECT IDENTIFIER="_96025d26-f5bd-3cb4-88be-0e2ff13cbc44" LAST-CHANGE="2025-08-13T22:49:08Z" LONG-NAME="BT2">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_96feca6a-421b-326e-89a7-a437cbc9d289</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-TXT-99009">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_4dbdb4b4-c4b8-378a-9efe-7b5197ecc2cb</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="BT2">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_88f1e357-ace6-3ffd-b11f-8ad9413b3afc</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-XHTML>
+                            <THE-VALUE>
+                                <reqif-xhtml:div>
+                                    <reqif-xhtml:p>
+                                        <reqif-xhtml:object data="image-fhrVKsMsMx.png" type="image/png"/>
+                                    </reqif-xhtml:p>
+                                </reqif-xhtml:div>
+                            </THE-VALUE>
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-XHTML-REF>_2ed6cda1-02c6-3148-926e-735a700a6708</ATTRIBUTE-DEFINITION-XHTML-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-XHTML>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-TXT-24">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_f60694cd-469f-3979-827c-2cfccec829c5</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+                <SPEC-OBJECT IDENTIFIER="_3372ef92-7b72-381a-8c36-e1530d7e0f2b" LAST-CHANGE="2025-08-19T20:27:47Z" LONG-NAME="CP6">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_96feca6a-421b-326e-89a7-a437cbc9d289</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-TXT-99156">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_4dbdb4b4-c4b8-378a-9efe-7b5197ecc2cb</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="CP6">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_88f1e357-ace6-3ffd-b11f-8ad9413b3afc</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-XHTML>
+                            <THE-VALUE>
+                                <reqif-xhtml:div>
+                                    <reqif-xhtml:p>
+                                        <reqif-xhtml:object data="sample-7705346_1280.jpg" type="image/jpeg"/>
+                                    </reqif-xhtml:p>
+                                </reqif-xhtml:div>
+                            </THE-VALUE>
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-XHTML-REF>_2ed6cda1-02c6-3148-926e-735a700a6708</ATTRIBUTE-DEFINITION-XHTML-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-XHTML>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-TXT-32">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_f60694cd-469f-3979-827c-2cfccec829c5</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+                <SPEC-OBJECT IDENTIFIER="_ae669eea-4c20-3553-806c-3a99eaa34142" LAST-CHANGE="2025-08-13T22:35:49Z" LONG-NAME="CP1">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_96feca6a-421b-326e-89a7-a437cbc9d289</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-TXT-98996">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_4dbdb4b4-c4b8-378a-9efe-7b5197ecc2cb</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="CP1">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_88f1e357-ace6-3ffd-b11f-8ad9413b3afc</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-XHTML>
+                            <THE-VALUE>
+                                <reqif-xhtml:div>
+                                    <reqif-xhtml:p>
+                                        <reqif-xhtml:object data="image-ettGGCT8wj.png" type="image/png"/>
+                                    </reqif-xhtml:p>
+                                </reqif-xhtml:div>
+                            </THE-VALUE>
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-XHTML-REF>_2ed6cda1-02c6-3148-926e-735a700a6708</ATTRIBUTE-DEFINITION-XHTML-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-XHTML>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-TXT-19">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_f60694cd-469f-3979-827c-2cfccec829c5</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+                <SPEC-OBJECT IDENTIFIER="_1c4113c3-9c3d-338e-a918-b1ab7957cbd5" LAST-CHANGE="2025-08-13T23:31:16Z" LONG-NAME="CP5">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_96feca6a-421b-326e-89a7-a437cbc9d289</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-TXT-99028">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_4dbdb4b4-c4b8-378a-9efe-7b5197ecc2cb</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="CP5">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_88f1e357-ace6-3ffd-b11f-8ad9413b3afc</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-XHTML>
+                            <THE-VALUE>
+                                <reqif-xhtml:div>
+                                    <reqif-xhtml:p>
+                                        <reqif-xhtml:object data="image-FVeQubJpzB.png" type="image/png"/>
+                                    </reqif-xhtml:p>
+                                </reqif-xhtml:div>
+                            </THE-VALUE>
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-XHTML-REF>_2ed6cda1-02c6-3148-926e-735a700a6708</ATTRIBUTE-DEFINITION-XHTML-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-XHTML>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-TXT-30">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_f60694cd-469f-3979-827c-2cfccec829c5</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+                <SPEC-OBJECT IDENTIFIER="_be00c93c-3fff-37d0-a527-72bbcb5c4b1f" LAST-CHANGE="2025-08-13T22:21:07Z" LONG-NAME="Attached Images">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_75040e9f-adb3-3b85-8115-01f85fb10059</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-SET-98882">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_b40b530a-7257-3d38-a366-94d64f563fb3</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="Attached Images">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_15a63543-0e76-3822-a3e5-294c5b50b9a4</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-SET-6">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_543a30ad-9c06-3aab-a32a-eef19e5448f8</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+                <SPEC-OBJECT IDENTIFIER="_3d1386b3-1263-3deb-aad1-55aaabc01a2c" LAST-CHANGE="2025-08-13T23:56:51Z" LONG-NAME="A5">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_96feca6a-421b-326e-89a7-a437cbc9d289</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-TXT-99029">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_4dbdb4b4-c4b8-378a-9efe-7b5197ecc2cb</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="A5">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_88f1e357-ace6-3ffd-b11f-8ad9413b3afc</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-TXT-31">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_f60694cd-469f-3979-827c-2cfccec829c5</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+                <SPEC-OBJECT IDENTIFIER="_819444e9-eb4e-3d37-80c3-b81d7646d20b" LAST-CHANGE="2025-08-13T22:52:59Z" LONG-NAME="CP3">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_96feca6a-421b-326e-89a7-a437cbc9d289</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-TXT-99014">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_4dbdb4b4-c4b8-378a-9efe-7b5197ecc2cb</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="CP3">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_88f1e357-ace6-3ffd-b11f-8ad9413b3afc</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-XHTML>
+                            <THE-VALUE>
+                                <reqif-xhtml:div>
+                                    <reqif-xhtml:p>
+                                        <reqif-xhtml:object data="image-5RTZLUnspl.png" type="image/png"/>
+                                    </reqif-xhtml:p>
+                                </reqif-xhtml:div>
+                            </THE-VALUE>
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-XHTML-REF>_2ed6cda1-02c6-3148-926e-735a700a6708</ATTRIBUTE-DEFINITION-XHTML-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-XHTML>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-TXT-25">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_f60694cd-469f-3979-827c-2cfccec829c5</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+                <SPEC-OBJECT IDENTIFIER="_28224303-4f4a-3f68-88f3-f72ad45c874e" LAST-CHANGE="2025-08-13T23:29:47Z" LONG-NAME="CP4">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_96feca6a-421b-326e-89a7-a437cbc9d289</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-TXT-99023">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_4dbdb4b4-c4b8-378a-9efe-7b5197ecc2cb</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="CP4">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_88f1e357-ace6-3ffd-b11f-8ad9413b3afc</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-XHTML>
+                            <THE-VALUE>
+                                <reqif-xhtml:div>
+                                    <reqif-xhtml:p>
+                                        <reqif-xhtml:object data="image-N6B3ohUgNK.png" type="image/png"/>
+                                    </reqif-xhtml:p>
+                                </reqif-xhtml:div>
+                            </THE-VALUE>
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-XHTML-REF>_2ed6cda1-02c6-3148-926e-735a700a6708</ATTRIBUTE-DEFINITION-XHTML-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-XHTML>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-TXT-28">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_f60694cd-469f-3979-827c-2cfccec829c5</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+                <SPEC-OBJECT IDENTIFIER="_101317c6-7c2b-3abe-b63e-d4b61737af71" LAST-CHANGE="2025-08-13T22:49:07Z" LONG-NAME="A2">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_96feca6a-421b-326e-89a7-a437cbc9d289</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-TXT-99006">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_4dbdb4b4-c4b8-378a-9efe-7b5197ecc2cb</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="A2">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_88f1e357-ace6-3ffd-b11f-8ad9413b3afc</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-TXT-23">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_f60694cd-469f-3979-827c-2cfccec829c5</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+                <SPEC-OBJECT IDENTIFIER="_7c8bb20a-a3e3-322c-a2c5-17cabeb923b6" LAST-CHANGE="2025-08-13T22:21:13Z" LONG-NAME="Both Type">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_75040e9f-adb3-3b85-8115-01f85fb10059</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-SET-98891">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_b40b530a-7257-3d38-a366-94d64f563fb3</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="Both Type">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_15a63543-0e76-3822-a3e5-294c5b50b9a4</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-SET-7">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_543a30ad-9c06-3aab-a32a-eef19e5448f8</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+                <SPEC-OBJECT IDENTIFIER="_c04e2a39-12a5-315d-a19b-1cb1cd040397" LAST-CHANGE="2025-08-13T22:37:35Z" LONG-NAME="BT1">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_96feca6a-421b-326e-89a7-a437cbc9d289</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-TXT-99000">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_4dbdb4b4-c4b8-378a-9efe-7b5197ecc2cb</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="BT1">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_88f1e357-ace6-3ffd-b11f-8ad9413b3afc</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-XHTML>
+                            <THE-VALUE>
+                                <reqif-xhtml:div>
+                                    <reqif-xhtml:p>
+                                        <reqif-xhtml:object data="image-2YJtiyinr0.png" type="image/png"/>
+                                    </reqif-xhtml:p>
+                                </reqif-xhtml:div>
+                            </THE-VALUE>
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-XHTML-REF>_2ed6cda1-02c6-3148-926e-735a700a6708</ATTRIBUTE-DEFINITION-XHTML-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-XHTML>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-TXT-21">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_f60694cd-469f-3979-827c-2cfccec829c5</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+                <SPEC-OBJECT IDENTIFIER="_ebff9364-3e18-31cc-9e04-b10bac8e50b6" LAST-CHANGE="2025-08-19T20:28:18Z" LONG-NAME="A6">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_96feca6a-421b-326e-89a7-a437cbc9d289</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-TXT-99157">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_4dbdb4b4-c4b8-378a-9efe-7b5197ecc2cb</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="A6">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_88f1e357-ace6-3ffd-b11f-8ad9413b3afc</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-TXT-33">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_f60694cd-469f-3979-827c-2cfccec829c5</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+                <SPEC-OBJECT IDENTIFIER="_a76adfc7-f21d-37b9-8b62-a32e81756205" LAST-CHANGE="2025-08-13T22:54:52Z" LONG-NAME="A3">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_96feca6a-421b-326e-89a7-a437cbc9d289</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-TXT-99015">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_4dbdb4b4-c4b8-378a-9efe-7b5197ecc2cb</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="A3">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_88f1e357-ace6-3ffd-b11f-8ad9413b3afc</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-TXT-26">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_f60694cd-469f-3979-827c-2cfccec829c5</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+                <SPEC-OBJECT IDENTIFIER="_ee1ca52a-d870-3dd9-8e07-ba7029c9d3de" LAST-CHANGE="2025-08-13T22:37:35Z" LONG-NAME="A1">
+                    <TYPE>
+                        <SPEC-OBJECT-TYPE-REF>_96feca6a-421b-326e-89a7-a437cbc9d289</SPEC-OBJECT-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-TXT-98997">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_4dbdb4b4-c4b8-378a-9efe-7b5197ecc2cb</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="A1">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_88f1e357-ace6-3ffd-b11f-8ad9413b3afc</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-TXT-20">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_f60694cd-469f-3979-827c-2cfccec829c5</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                </SPEC-OBJECT>
+            </SPEC-OBJECTS>
+            <SPEC-RELATIONS/>
+            <SPECIFICATIONS>
+                <SPECIFICATION IDENTIFIER="_e42edaa2-f3a5-3a08-b837-c8d6d2001a45" LAST-CHANGE="2025-08-13T22:20:58Z" LONG-NAME="Original">
+                    <TYPE>
+                        <SPECIFICATION-TYPE-REF>_eae0be0b-a5c7-36e7-856e-97bc95ce62c9</SPECIFICATION-TYPE-REF>
+                    </TYPE>
+                    <VALUES>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="GID-CMP-98985">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_31f22f1a-aa89-39b2-bfeb-8e6a230afd5c</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="Original">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_6f6655b0-deab-3581-89bb-620812e49216</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                        <ATTRIBUTE-VALUE-STRING THE-VALUE="JSCI3-CMP-1">
+                            <DEFINITION>
+                                <ATTRIBUTE-DEFINITION-STRING-REF>_d14297ee-10d2-351e-a653-3c39dbad2be4</ATTRIBUTE-DEFINITION-STRING-REF>
+                            </DEFINITION>
+                        </ATTRIBUTE-VALUE-STRING>
+                    </VALUES>
+                    <CHILDREN>
+                        <SPEC-HIERARCHY IDENTIFIER="_b5cf0544-b043-3e1f-bc77-1e3f3491a09f" LAST-CHANGE="2025-08-28T20:02:12.079730949Z">
+                            <OBJECT>
+                                <SPEC-OBJECT-REF>_7bdbd98a-c7b7-3296-9262-fcff77c6b248</SPEC-OBJECT-REF>
+                            </OBJECT>
+                            <CHILDREN>
+                                <SPEC-HIERARCHY IDENTIFIER="_803b3415-195d-3749-b3cb-438930c076dd" LAST-CHANGE="2025-08-28T20:02:12.079795778Z">
+                                    <OBJECT>
+                                        <SPEC-OBJECT-REF>_ae669eea-4c20-3553-806c-3a99eaa34142</SPEC-OBJECT-REF>
+                                    </OBJECT>
+                                </SPEC-HIERARCHY>
+                                <SPEC-HIERARCHY IDENTIFIER="_b6d5104c-7469-361c-877c-c3874ac3e4ae" LAST-CHANGE="2025-08-28T20:02:12.079817523Z">
+                                    <OBJECT>
+                                        <SPEC-OBJECT-REF>_29f61c36-3688-3c8f-af55-f1cff59bedf4</SPEC-OBJECT-REF>
+                                    </OBJECT>
+                                </SPEC-HIERARCHY>
+                                <SPEC-HIERARCHY IDENTIFIER="_5c2717e9-5a10-3c02-bf85-a18a3e8e2c6b" LAST-CHANGE="2025-08-28T20:02:12.07983228Z">
+                                    <OBJECT>
+                                        <SPEC-OBJECT-REF>_819444e9-eb4e-3d37-80c3-b81d7646d20b</SPEC-OBJECT-REF>
+                                    </OBJECT>
+                                </SPEC-HIERARCHY>
+                                <SPEC-HIERARCHY IDENTIFIER="_ea97f955-e000-3a55-84e6-a06f61305c12" LAST-CHANGE="2025-08-28T20:02:12.079846949Z">
+                                    <OBJECT>
+                                        <SPEC-OBJECT-REF>_28224303-4f4a-3f68-88f3-f72ad45c874e</SPEC-OBJECT-REF>
+                                    </OBJECT>
+                                </SPEC-HIERARCHY>
+                                <SPEC-HIERARCHY IDENTIFIER="_79204984-70bc-3eb5-8345-78fc28c133ee" LAST-CHANGE="2025-08-28T20:02:12.079860819Z">
+                                    <OBJECT>
+                                        <SPEC-OBJECT-REF>_1c4113c3-9c3d-338e-a918-b1ab7957cbd5</SPEC-OBJECT-REF>
+                                    </OBJECT>
+                                </SPEC-HIERARCHY>
+                                <SPEC-HIERARCHY IDENTIFIER="_6cfa0038-fe26-3087-88ad-441ce6783dcc" LAST-CHANGE="2025-08-28T20:02:12.079873619Z">
+                                    <OBJECT>
+                                        <SPEC-OBJECT-REF>_3372ef92-7b72-381a-8c36-e1530d7e0f2b</SPEC-OBJECT-REF>
+                                    </OBJECT>
+                                </SPEC-HIERARCHY>
+                            </CHILDREN>
+                        </SPEC-HIERARCHY>
+                        <SPEC-HIERARCHY IDENTIFIER="_68e0b129-f33a-3842-87ea-70f435a4bf82" LAST-CHANGE="2025-08-28T20:02:12.079888271Z">
+                            <OBJECT>
+                                <SPEC-OBJECT-REF>_be00c93c-3fff-37d0-a527-72bbcb5c4b1f</SPEC-OBJECT-REF>
+                            </OBJECT>
+                            <CHILDREN>
+                                <SPEC-HIERARCHY IDENTIFIER="_32d04459-d1a3-32c5-860d-19242b510561" LAST-CHANGE="2025-08-28T20:02:12.079902629Z">
+                                    <OBJECT>
+                                        <SPEC-OBJECT-REF>_ee1ca52a-d870-3dd9-8e07-ba7029c9d3de</SPEC-OBJECT-REF>
+                                    </OBJECT>
+                                </SPEC-HIERARCHY>
+                                <SPEC-HIERARCHY IDENTIFIER="_987a448f-39ea-39ea-88a6-32670a14f940" LAST-CHANGE="2025-08-28T20:02:12.079916651Z">
+                                    <OBJECT>
+                                        <SPEC-OBJECT-REF>_101317c6-7c2b-3abe-b63e-d4b61737af71</SPEC-OBJECT-REF>
+                                    </OBJECT>
+                                </SPEC-HIERARCHY>
+                                <SPEC-HIERARCHY IDENTIFIER="_cd097474-89ec-3892-ae58-65344d36f677" LAST-CHANGE="2025-08-28T20:02:12.079930085Z">
+                                    <OBJECT>
+                                        <SPEC-OBJECT-REF>_a76adfc7-f21d-37b9-8b62-a32e81756205</SPEC-OBJECT-REF>
+                                    </OBJECT>
+                                </SPEC-HIERARCHY>
+                                <SPEC-HIERARCHY IDENTIFIER="_97f34ac4-7741-3ae9-8a36-2d3894b65068" LAST-CHANGE="2025-08-28T20:02:12.079944238Z">
+                                    <OBJECT>
+                                        <SPEC-OBJECT-REF>_0e39dc53-ce3e-344d-9323-d85b9a419b55</SPEC-OBJECT-REF>
+                                    </OBJECT>
+                                </SPEC-HIERARCHY>
+                                <SPEC-HIERARCHY IDENTIFIER="_dacdcd69-e816-3947-a497-12e50b490714" LAST-CHANGE="2025-08-28T20:02:12.07995725Z">
+                                    <OBJECT>
+                                        <SPEC-OBJECT-REF>_3d1386b3-1263-3deb-aad1-55aaabc01a2c</SPEC-OBJECT-REF>
+                                    </OBJECT>
+                                </SPEC-HIERARCHY>
+                                <SPEC-HIERARCHY IDENTIFIER="_358305f3-4f89-3678-b431-85f181a82b6f" LAST-CHANGE="2025-08-28T20:02:12.079970745Z">
+                                    <OBJECT>
+                                        <SPEC-OBJECT-REF>_ebff9364-3e18-31cc-9e04-b10bac8e50b6</SPEC-OBJECT-REF>
+                                    </OBJECT>
+                                </SPEC-HIERARCHY>
+                            </CHILDREN>
+                        </SPEC-HIERARCHY>
+                        <SPEC-HIERARCHY IDENTIFIER="_f5a1b5f5-3ba8-34e9-a9ff-3e9f2b51371b" LAST-CHANGE="2025-08-28T20:02:12.080739818Z">
+                            <OBJECT>
+                                <SPEC-OBJECT-REF>_7c8bb20a-a3e3-322c-a2c5-17cabeb923b6</SPEC-OBJECT-REF>
+                            </OBJECT>
+                            <CHILDREN>
+                                <SPEC-HIERARCHY IDENTIFIER="_b7c13300-a50f-3a84-9b1b-2c07a6be3e73" LAST-CHANGE="2025-08-28T20:02:12.080791841Z">
+                                    <OBJECT>
+                                        <SPEC-OBJECT-REF>_c04e2a39-12a5-315d-a19b-1cb1cd040397</SPEC-OBJECT-REF>
+                                    </OBJECT>
+                                </SPEC-HIERARCHY>
+                                <SPEC-HIERARCHY IDENTIFIER="_3046b020-544f-395c-bc1e-d3d4cac4af0a" LAST-CHANGE="2025-08-28T20:02:12.080807677Z">
+                                    <OBJECT>
+                                        <SPEC-OBJECT-REF>_96025d26-f5bd-3cb4-88be-0e2ff13cbc44</SPEC-OBJECT-REF>
+                                    </OBJECT>
+                                </SPEC-HIERARCHY>
+                                <SPEC-HIERARCHY IDENTIFIER="_d36f5ef0-ff81-3cda-922f-85fe780271db" LAST-CHANGE="2025-08-28T20:02:12.080821203Z">
+                                    <OBJECT>
+                                        <SPEC-OBJECT-REF>_f2ba15e0-f416-3333-9413-0b706722fd2c</SPEC-OBJECT-REF>
+                                    </OBJECT>
+                                </SPEC-HIERARCHY>
+                            </CHILDREN>
+                        </SPEC-HIERARCHY>
+                    </CHILDREN>
+                </SPECIFICATION>
+            </SPECIFICATIONS>
+            <SPEC-RELATION-GROUPS/>
+        </REQ-IF-CONTENT>
+    </CORE-CONTENT>
+</REQ-IF>
